@@ -136,8 +136,8 @@ static void drive_deselect(void)
     switch (bus_type) {
     case BUS_IBMPC:
         switch (unit_nr) {
-        case 0: pin = 14; break;
-        case 1: pin = 12; break;
+        case 0: pin = 12; break;
+        case 1: pin = 14; break;
         }
         break;
     case BUS_SHUGART:
@@ -168,8 +168,8 @@ static uint8_t drive_select(uint8_t nr)
     switch (bus_type) {
     case BUS_IBMPC:
         switch (nr) {
-        case 0: pin = 14; break;
-        case 1: pin = 12; break;
+        case 0: pin = 12; break;
+        case 1: pin = 14; break;
         default: return ACK_BAD_UNIT;
         }
         break;
@@ -207,8 +207,8 @@ static uint8_t drive_motor(uint8_t nr, bool_t on)
         if (unit[nr].motor == on)
             return ACK_OKAY;
         switch (nr) {
-        case 0: pin = 10; break;
-        case 1: pin = 16; break;
+        case 0: pin = 16; break;
+        case 1: pin = 10; break;
         }
         break;
     case BUS_SHUGART:
